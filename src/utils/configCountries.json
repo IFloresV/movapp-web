@@ -1,5 +1,6 @@
 {
    "MX": {
+      "id_producto": 1,
       "nombre": "México",
       "moneda": "MXN",
       "simbolo": "$",
@@ -8,14 +9,16 @@
       "precioMx": 500
    },
    "PE": {
+      "id_producto": 2,
       "nombre": "Perú",
       "moneda": "PEN",
       "simbolo": "S/",
       "precio": 126,
       "bandera": "fi fi-pe",
-      "precioMx": 666   
+      "precioMx": 666
    },
    "CO": {
+      "id_producto": 3,
       "nombre": "Colombia",
       "moneda": "COP",
       "simbolo": "$",
@@ -24,6 +27,7 @@
       "precioMx": 608
    },
    "EC": {
+      "id_producto": 4,
       "nombre": "Ecuador",
       "moneda": "USD",
       "simbolo": "$",
@@ -32,6 +36,7 @@
       "precioMx": 660
    },
    "BO": {
+      "id_producto": 5,
       "nombre": "Bolivia",
       "moneda": "BOB",
       "simbolo": "$",
@@ -39,8 +44,8 @@
       "bandera": "fi fi-bo",
       "precioMx": 622
    },
-
    "AR": {
+      "id_producto": 6,
       "nombre": "Argentina",
       "moneda": "ARS",
       "simbolo": "$",
@@ -49,6 +54,7 @@
       "precioMx": 10
    },
    "CL": {
+      "id_producto": 7,
       "nombre": "Chile",
       "moneda": "CLP",
       "simbolo": "$",

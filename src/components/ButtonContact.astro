@@ -5,16 +5,39 @@ import { URLS } from '@constants/socials.ts';
 ---
 
 <a
-   href={URLS.whatsapp.oficial}
-   class="inline-flex items-center gap-2
-   px-4
-    py-2
-    text-sm text-white
-    bg-green-500 hover:bg-green-600
-    rounded-3xl transition"
+   href={URLS.whatsapp.principal}
+   id="wa__stt"
+   class="wa__stt inline-flex items-center gap-2 px-4 py-2 text-sm text-white bg-green-500 hover:bg-green-600 rounded-3xl transition"
    target="_blank"
    rel="noopener noreferrer"
 >
    <Picture src={ImgWhatsapp} alt="Whatsapp" class="h-4 w-4 md:h-6 md:w-6" />
    <span>Contáctanos</span>
 </a>
+
+<script type="module">
+   import { trackEvent, generateEventId } from '@utils/metaPixel.js';
+
+   document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('wa__stt');
+
+      btn?.addEventListener('click', async () => {
+         // Trackear con la API genérica y deduplicación automática
+         await trackEvent(
+            'Lead',
+            {
+               content_name: 'WhatsApp Contact',
+               content_category: 'whatsapp_contact',
+               lead_type: 'contact_button',
+               page_url: window.location.href,
+               page_title: document.title,
+               value: 0,
+               currency: 'MXN',
+            },
+            {},
+         );
+
+         console.log('WhatsApp contact tracked with deduplication');
+      });
+   });
+</script>

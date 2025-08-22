@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 // import tailwindcss from "@tailwindcss/vite";
 import tailwind from '@astrojs/tailwind';
+import netlify from '@astrojs/netlify';
 
 export default defineConfig({
    integrations: [tailwind(), react()],
@@ -22,13 +23,20 @@ export default defineConfig({
             '@constants': '/src/constants/',
          },
       },
+      // assetsInclude: ['**/*.json']
    },
-   output: 'static',
+   output: 'server',
+   adapter: netlify(),
    build: {
       inlineStylesheets: 'auto',
    },
    server: {
-      host: true,
+      host: '192.168.3.143', // host: true,
       port: 7001,
+      headers: {
+         'X-Frame-Options': 'SAMEORIGIN',
+         'X-Content-Type-Options': 'nosniff',
+         'Referrer-Policy': 'strict-origin-when-cross-origin',
+      },
    },
 });
